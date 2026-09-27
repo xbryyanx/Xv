@@ -851,77 +851,6 @@ color:white;
 
 
 
-.gallery{
-
-    display:grid;
-
-    grid-template-columns:
-
-    repeat(auto-fit,minmax(280px,1fr));
-
-    gap:30px;
-
-    margin-top:60px;
-
-}
-
-
-
-.gallery img{
-
-    width:100%;
-
-    height:400px;
-
-    object-fit:cover;
-
-    border-radius:25px;
-
-    box-shadow:var(--shadow);
-
-    cursor:pointer;
-
-    transition:.5s;
-
-}
-
-
-
-.gallery img:hover{
-
-    transform:
-
-    scale(1.05)
-
-    translateY(-10px);
-
-    box-shadow:
-
-    0 30px 60px rgba(0,0,0,.25);
-
-}
-
-
-
-/* Floating gallery effect */
-
-.gallery img:nth-child(even){
-
-    animation:
-
-    float 6s ease-in-out infinite;
-
-}
-
-
-
-.gallery img:nth-child(odd){
-
-    animation:
-
-    float 8s ease-in-out infinite;
-
-}
 
 
 
@@ -1382,13 +1311,6 @@ section{
 
 
 
-.gallery{
-
-    grid-template-columns:
-
-    1fr;
-
-}
 
 
 
@@ -1504,11 +1426,6 @@ button,
 
 
 
-.gallery img{
-
-    height:300px;
-
-}
 
 
 
@@ -2245,174 +2162,10 @@ width:100%;
 }
 
 
-/* ==========================================
+/* ==========================================================
    PHOTO CAROUSEL
-========================================== */
-
-.gallery-carousel {
-    position: relative;
-    max-width: 850px;
-    margin: 50px auto 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.gallery-track {
-    width: 100%;
-    overflow: hidden;
-    border-radius: 25px;
-}
-
-.gallery-slide {
-    display: none;
-    width: 100%;
-    animation: galleryFade 0.6s ease;
-}
-
-.gallery-slide.active {
-    display: block;
-}
-
-.gallery-slide img {
-    width: 100%;
-    height: 600px;
-    object-fit: cover;
-    border-radius: 25px;
-    box-shadow: var(--shadow);
-    cursor: pointer;
-}
-
-/* Arrows */
-
-.gallery-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 5;
-
-    width: 55px;
-    height: 55px;
-
-    border: none;
-    border-radius: 50%;
-
-    background: var(--dark-rose);
-    transform: translateY(-50%) scale(1.1);
-
-    font-size: 24px;
-    cursor: pointer;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    transition: 0.3s;
-}
-
-.gallery-btn:hover {
-    background: var(--dark-rose);
-    transform: translateY(-50%) scale(1.1);
-}
-
-.gallery-prev {
-    left: 20px;
-}
-
-.gallery-next {
-    right: 20px;
-}
-
-/* Dots */
-
-.gallery-dots {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 25px;
-}
-
-.gallery-dot {
-    width: 2px;
-    height: 2px;
-
-    border-radius: 100%;
-    border: none;
-
-    background: var(--rose);
-
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.gallery-dot.active {
-    width: 28px;
-    border-radius: 10px;
-    background: var(--gold);
-}
-
-/* Fade animation */
-
-@keyframes galleryFade {
-    from {
-        opacity: 0;
-        transform: scale(0.97);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-
-/* ==========================================
-   MOBILE GALLERY
-========================================== */
-
-@media (max-width: 768px) {
-
-    .gallery-carousel {
-        max-width: 100%;
-    }
-
-    .gallery-slide img {
-        height: 500px;
-    }
-
-    .gallery-btn {
-        width: 45px;
-        height: 45px;
-        font-size: 18px;
-    }
-
-    .gallery-prev {
-        left: 10px;
-    }
-
-    .gallery-next {
-        right: 10px;
-    }
-}
-
-
-@media (max-width: 480px) {
-
-    .gallery-slide img {
-        height: 430px;
-    }
-
-    .gallery-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
-    }
-
-}
-
-/* ==========================================
-   PREMIUM PHOTO CAROUSEL
-========================================== */
+   Unified desktop + mobile system
+========================================================== */
 
 .gallery {
     display: block;
@@ -2432,109 +2185,95 @@ width:100%;
 }
 
 .gallery-track {
+    position: relative;
     width: 100%;
     overflow: hidden;
     border-radius: 25px;
-    position: relative;
+    background: rgba(119, 74, 67, 0.08);
 }
 
 .gallery-slide {
     display: none;
-    width: 100%;
-}
-
-.gallery-slide.active {
-    display: block;
-    animation: galleryFade 0.7s ease;
-}
-
-.gallery-slide {
     width: 100%;
     height: 600px;
-
-    display: none;
-
     align-items: center;
     justify-content: center;
-
     background: var(--ivory);
-
     border-radius: 25px;
     overflow: hidden;
 }
 
 .gallery-slide.active {
     display: flex;
-    animation: galleryFade 0.7s ease;
+    animation: galleryFade 0.6s ease;
 }
 
 .gallery-slide img {
     display: block;
-
     width: 100%;
     height: 100%;
-
+    aspect-ratio: 4 / 5;
     object-fit: contain;
-
     border-radius: 25px;
-
     box-shadow: var(--shadow);
-
+    background: rgba(255, 255, 255, 0.18);
     cursor: pointer;
-
     animation: none !important;
-
-    transition: transform 0.4s ease;
+    transition: transform 0.3s ease;
 }
 
 .gallery-slide img:hover {
     transform: scale(1.01);
 }
-.gallery-slide img:hover {
-    transform: scale(1.01);
-}
 
-
-/* ==========================================
+/* ----------------------------------------------------------
    CAROUSEL ARROWS
-========================================== */
+---------------------------------------------------------- */
 
 .gallery-btn {
+    appearance: none;
+    -webkit-appearance: none;
+
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-
-    width: 58px;
-    height: 58px;
-
-    border: 1px solid rgba(255, 248, 243, 0.7);
-    border-radius: 50%;
-
-     background: var(--dark-rose);
-    transform: translateY(-50%) scale(1.1);
+    z-index: 10;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    width: 58px;
+    height: 58px;
+    min-width: 58px;
+    min-height: 58px;
+
+    padding: 0;
+    margin: 0;
+
+    border: 1px solid rgba(255, 248, 243, 0.7);
+    border-radius: 50%;
+
+    background: var(--dark-rose);
+    color: white;
 
     font-size: 24px;
     line-height: 1;
 
     cursor: pointer;
-    z-index: 10;
+    box-shadow: none;
+
+    transform: translateY(-50%);
 
     transition:
         transform 0.3s ease,
-        background 0.3s ease,
+        background-color 0.3s ease,
         box-shadow 0.3s ease;
 }
 
 .gallery-btn:hover {
     background: var(--dark-rose);
-    transform: translateY(-50%) scale(1.1);
-
-    box-shadow:
-        0 0 15px rgba(214, 183, 122, 0.5);
+    transform: translateY(-50%) scale(1.08);
+    box-shadow: 0 0 15px rgba(214, 183, 122, 0.5);
 }
 
 .gallery-prev {
@@ -2545,58 +2284,74 @@ width:100%;
     right: 20px;
 }
 
-
-/* ==========================================
+/* ----------------------------------------------------------
    PHOTO INDICATOR DOTS
-========================================== */
+---------------------------------------------------------- */
 
 .gallery-dots {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
-    gap: 9px;
-
-    margin-top: 25px;
+    width: 100%;
+    gap: 8px;
+    margin-top: 20px;
 }
 
 .gallery-dot {
-    width: 10px;
-    height: 10px;
+    appearance: none;
+    -webkit-appearance: none;
+
+    display: block;
+    flex: 0 0 auto;
+
+    width: 7px;
+    height: 7px;
+    min-width: 7px;
+    min-height: 7px;
 
     padding: 0;
     margin: 0;
 
     border: none;
+    outline: none;
     border-radius: 50%;
 
     background: var(--rose);
+    box-shadow: none;
 
     cursor: pointer;
+    line-height: 0;
 
     transition:
         width 0.3s ease,
-        background 0.3s ease,
+        background-color 0.3s ease,
         transform 0.3s ease;
 }
 
 .gallery-dot:hover {
-    transform: scale(1.2);
+    transform: scale(1.15);
 }
 
 .gallery-dot.active {
-    width: 28px;
-    border-radius: 10px;
+    width: 22px;
+    height: 7px;
+    min-width: 22px;
+    min-height: 7px;
+    border-radius: 7px;
     background: var(--gold);
 }
 
+.gallery-dot:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+}
 
-/* ==========================================
+/* ----------------------------------------------------------
    PHOTO FADE
-========================================== */
+---------------------------------------------------------- */
 
 @keyframes galleryFade {
-
     from {
         opacity: 0;
         transform: scale(0.97);
@@ -2606,34 +2361,133 @@ width:100%;
         opacity: 1;
         transform: scale(1);
     }
-
 }
 
-
-/* ==========================================
-   MOBILE
-========================================== */
+/* ==========================================================
+   CAROUSEL MOBILE
+========================================================== */
 
 @media (max-width: 768px) {
 
+    .gallery {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .gallery-carousel {
+        width: 100%;
+        max-width: 100%;
+        margin: 32px auto 15px;
+    }
+
+    .gallery-track {
+        border-radius: 18px;
+    }
+
     .gallery-slide {
-        height: 520px;
+        height: min(72svh, 520px);
+        min-height: 300px;
+        border-radius: 18px;
     }
 
     .gallery-slide img {
-        height: 100%;
         width: 100%;
+        height: 100%;
+        aspect-ratio: 4 / 5;
         object-fit: contain;
+        border-radius: 18px;
     }
 
+    .gallery-btn {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+        font-size: 19px;
+        background: rgba(119, 74, 67, 0.72);
+    }
+
+    .gallery-btn:hover {
+        transform: translateY(-50%);
+        box-shadow: none;
+    }
+
+    .gallery-prev {
+        left: 8px;
+    }
+
+    .gallery-next {
+        right: 8px;
+    }
+
+    .gallery-dots {
+        gap: 7px;
+        margin-top: 18px;
+    }
+
+    .gallery-dot {
+        width: 6px;
+        height: 6px;
+        min-width: 6px;
+        min-height: 6px;
+    }
+
+    .gallery-dot.active {
+        width: 19px;
+        height: 6px;
+        min-width: 19px;
+        min-height: 6px;
+    }
+
+    .gallery-dot:hover {
+        transform: none;
+    }
 }
 
 @media (max-width: 480px) {
 
     .gallery-slide {
-        height: 430px;
+        height: 68svh;
+        min-height: 280px;
     }
 
+    .gallery-slide img,
+    .gallery-track {
+        border-radius: 15px;
+    }
+
+    .gallery-btn {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+        font-size: 16px;
+    }
+
+    .gallery-prev {
+        left: 6px;
+    }
+
+    .gallery-next {
+        right: 6px;
+    }
+
+    .gallery-dots {
+        gap: 6px;
+        margin-top: 16px;
+    }
+
+    .gallery-dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .gallery-dot.active {
+        width: 18px;
+        height: 6px;
+        min-width: 18px;
+        min-height: 6px;
+    }
 }
 
 /* ==========================================================
@@ -2667,17 +2521,6 @@ video {
     max-width: 100%;
 }
 
-/* Better gallery sizing: preserve the entire photo instead of cropping it */
-.gallery-track {
-    background: rgba(119, 74, 67, 0.08);
-}
-
-.gallery-slide img {
-    height: min(600px, 70vh);
-    aspect-ratio: 4 / 5;
-    object-fit: contain;
-    background: rgba(255, 255, 255, 0.18);
-}
 
 /* Avoid the decorative heading stars getting pushed off small screens */
 @media (max-width: 768px) {
@@ -2782,7 +2625,7 @@ video {
     }
 
     /* Buttons stack cleanly and are easier to tap */
-    button,
+    button:not(.gallery-btn):not(.gallery-dot),
     .heroButton,
     .mapButton {
         min-height: 52px;
@@ -2836,39 +2679,6 @@ video {
         transform: none;
     }
 
-    /* Mobile gallery */
-    .gallery-carousel {
-        width: 100%;
-        margin: 32px auto 15px;
-    }
-
-    .gallery-track {
-        border-radius: 18px;
-    }
-
-    .gallery-slide img {
-        width: 100%;
-        height: min(72svh, 520px);
-        min-height: 300px;
-        aspect-ratio: 4 / 5;
-        border-radius: 18px;
-        object-fit: contain;
-    }
-
-    .gallery-btn {
-        width: 44px;
-        height: 44px;
-        font-size: 19px;
-        background: rgba(119, 74, 67, 0.72);
-    }
-
-    .gallery-prev {
-        left: 8px;
-    }
-
-    .gallery-next {
-        right: 8px;
-    }
 
 
 
@@ -2969,16 +2779,6 @@ video {
         padding: 18px 7px;
     }
 
-    .gallery-slide img {
-        height: 68svh;
-        min-height: 280px;
-        border-radius: 15px;
-    }
-
-    .gallery-btn {
-        width: 40px;
-        height: 40px;
-    }
 
     #location iframe {
         height: 270px !important;
@@ -3000,5 +2800,4 @@ video {
         transition-duration: 0.01ms !important;
     }
 }
-
 
