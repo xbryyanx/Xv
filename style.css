@@ -3317,19 +3317,30 @@ video {
 @media (max-width: 600px) {
 
     .gallery-dots {
-        gap: 7px !important;
-        margin-top: 16px !important;
+        gap: 6px !important;
+        margin-top: 14px !important;
     }
 
     .gallery-dots .gallery-dot {
-        width: 6px !important;
-        max-width: 6px !important;
-        height: 6px !important;
+        width: 4px !important;
+        max-width: 4px !important;
+        height: 4px !important;
+
+        border-width: 0.5px !important;
+        opacity: 0.75;
+    }
+
+    .gallery-dots .gallery-dot:hover {
+        transform: scale(1.2) !important;
     }
 
     .gallery-dots .gallery-dot.active {
-        width: 21px !important;
-        max-width: 21px !important;
-        height: 6px !important;
+        width: 16px !important;
+        max-width: 16px !important;
+        height: 4px !important;
+
+        border-radius: 8px !important;
+
+        box-shadow: none !important;
     }
 }
