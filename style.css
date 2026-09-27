@@ -1020,6 +1020,7 @@ color:white;
     display:inline-block;
 
     margin-top:35px;
+  
 
 }
 
@@ -3235,112 +3236,92 @@ video {
     }
 
 }
-
-/* =========================================
-   FINAL GALLERY DOT DESIGN
-   ========================================= */
+/* ==========================================
+   PHOTO INDICATOR DOTS
+========================================== */
 
 .gallery-dots {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 8px !important;
-    margin: 22px auto 0 !important;
-    padding: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 25px;
 }
 
-/* Individual dots */
-.gallery-dots .gallery-dot {
-    appearance: none !important;
-    -webkit-appearance: none !important;
+.gallery-dot {
+    width: 10px;
+    height: 10px;
 
-    width: 7px !important;
-    height: 7px !important;
+    padding: 0;
+    margin: 0;
 
-    min-width: 7px !important;
-    max-width: 7px !important;
+    border: none;
+    border-radius: 50%;
 
-    padding: 0 !important;
-    margin: 0 !important;
+    background: var(--rose);
 
-    border: 1px solid rgba(214, 183, 122, 0.65) !important;
-    border-radius: 50% !important;
-
-    background: rgba(226, 176, 172, 0.35) !important;
-
-    box-shadow: none !important;
-
-    cursor: pointer !important;
-
-    transform: none !important;
+    cursor: pointer;
 
     transition:
         width 0.3s ease,
-        max-width 0.3s ease,
         background 0.3s ease,
-        transform 0.3s ease,
-        box-shadow 0.3s ease !important;
+        transform 0.3s ease;
 }
 
-/* Hover */
-.gallery-dots .gallery-dot:hover {
-    transform: scale(1.35) !important;
-    background: var(--gold) !important;
+.gallery-dot:hover {
+    transform: scale(1.2);
 }
 
-/* Active photo */
-.gallery-dots .gallery-dot.active {
-    width: 24px !important;
-    max-width: 24px !important;
-    height: 7px !important;
-
-    border-radius: 10px !important;
-    border: none !important;
-
-    background: linear-gradient(
-        90deg,
-        var(--rose),
-        var(--gold),
-        var(--rose)
-    ) !important;
-
-    box-shadow:
-        0 2px 8px rgba(214, 183, 122, 0.28) !important;
-
-    transform: none !important;
+.gallery-dot.active {
+    width: 28px;
+    border-radius: 10px;
+    background: var(--gold);
 }
 
-/* =========================================
-   PHONE
-   ========================================= */
 
-@media (max-width: 600px) {
+/* ==========================================
+   PHOTO FADE
+========================================== */
 
-    .gallery-dots {
-        gap: 6px !important;
-        margin-top: 14px !important;
+@keyframes galleryFade {
+
+    from {
+        opacity: 0;
+        transform: scale(0.97);
     }
 
-    .gallery-dots .gallery-dot {
-        width: 4px !important;
-        max-width: 4px !important;
-        height: 4px !important;
-
-        border-width: 0.5px !important;
-        opacity: 0.75;
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 
-    .gallery-dots .gallery-dot:hover {
-        transform: scale(1.2) !important;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .gallery-slide {
+        height: 520px;
     }
 
-    .gallery-dots .gallery-dot.active {
-        width: 16px !important;
-        max-width: 16px !important;
-        height: 4px !important;
-
-        border-radius: 8px !important;
-
-        box-shadow: none !important;
+    .gallery-slide img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
     }
+
+}
+
+@media (max-width: 480px) {
+
+    .gallery-slide {
+        height: 430px;
+    }
+
 }
