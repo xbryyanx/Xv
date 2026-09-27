@@ -2297,8 +2297,8 @@ width:100%;
     border: none;
     border-radius: 50%;
 
-    background: rgba(119, 74, 67, 0.85);
-    color: var(--ivory);
+    background: var(--dark-rose);
+    transform: translateY(-50%) scale(1.1);
 
     font-size: 24px;
     cursor: pointer;
@@ -2333,8 +2333,8 @@ width:100%;
 }
 
 .gallery-dot {
-    width: 10px;
-    height: 10px;
+    width: 5px;
+    height: 5px;
 
     border-radius: 50%;
     border: none;
@@ -2510,8 +2510,8 @@ width:100%;
     border: 1px solid rgba(255, 248, 243, 0.7);
     border-radius: 50%;
 
-    background: rgba(119, 74, 67, 0.88);
-    color: var(--ivory);
+     background: var(--dark-rose);
+    transform: translateY(-50%) scale(1.1);
 
     display: flex;
     align-items: center;
