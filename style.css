@@ -2333,10 +2333,10 @@ width:100%;
 }
 
 .gallery-dot {
-    width: 5px;
-    height: 5px;
+    width: 2px;
+    height: 2px;
 
-    border-radius: 50%;
+    border-radius: 100%;
     border: none;
 
     background: var(--rose);
