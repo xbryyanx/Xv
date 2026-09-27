@@ -917,43 +917,28 @@ color:white;
 ========================================================== **/
 
 
-
-#location{
-
-    background:white;
-
-    text-align:center;
-
+#location {
+    background: white;
+    text-align: center;
 }
 
-
-
-
-
-#location iframe{
-
-    margin-top:40px;
-
-    border-radius:25px;
-
-    box-shadow:var(--shadow);
-
-    overflow:hidden;
-
+#location iframe {
+    display: block;
+    width: min(900px, 100%);
+    max-width: 900px;
+    height: 450px;
+    margin: 40px auto 0;
+    border: 0;
+    border-radius: 25px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
 }
 
-
-
-.mapButton{
-
-    display:inline-block;
-
-    margin-top:35px;
-  
-
+#location .mapButton {
+    display: block;
+    width: fit-content;
+    margin: 35px auto 0;
 }
-
-
 
 
 
